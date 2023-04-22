@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback  } from 'react'
 import {
   escrowFunds,
-   getContractBalance, getEcrowList, groupTransfer
+   getContractBalance, getEscrowList, groupTransfer
 } from '@/interact'
 import { useCelo } from '@celo/react-celo';
 import InputFieldList from '@/components/InputField';
@@ -9,7 +9,6 @@ import InputFieldList from '@/components/InputField';
 export default function Home() {
 
   const { kit, address } = useCelo()
-  const [employees, setEmployees] = useState<any[]>([])
   const [contractBal, setContractBal] = useState<number>(0)
   const [users, setUsers] = useState<any[]>([])
   const [input, setInput] = useState<string>("")
@@ -43,7 +42,7 @@ export default function Home() {
   }, [kit])
 
     const handleUsers = useCallback( async () => {
-    const res = await getEcrowList(kit);
+    const res = await getEscrowList(kit);
     setUsers(res)
   }, [kit])
 

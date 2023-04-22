@@ -3,7 +3,7 @@ import { BigNumber, ethers } from "ethers";
 import Web3 from 'web3';
 const web3 = new Web3("https://alfajores-forno.celo-testnet.org");
 
-const escrowAddress = "0xF894B143FcF4f12Aa7135bc1Bd6e87c1357c4EA6";
+const escrowAddress = "0xAfdD3c5C38E6Ff332C0ce9948CC273A0B94b87Ab";
 
 export function initContract(kit: any) {
   return new kit.connection.web3.eth.Contract(escrowABI.abi, escrowAddress)
@@ -50,9 +50,9 @@ export const batchTransfer = async (address: string | null | undefined,
   }
 }
 
-export const getEcrowList = async (kit: any) => {
+export const getEscrowList = async (kit: any) => {
   try {
-    const response = await initContract(kit).methods.getEcrowList().call()
+    const response = await initContract(kit).methods.getEscrowList().call()
     console.log(response)
     return response;
   } catch (e) {

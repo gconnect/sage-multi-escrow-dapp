@@ -102,7 +102,7 @@ contract Escrow {
         }
     }
 
-    function getEcrowList() public view returns(EscrowData [] memory){
+    function getEscrowList() public view returns(EscrowData [] memory){
         return escrowList;
     }
 
